@@ -1,4 +1,5 @@
 import 'package:doctor_ui/const.dart';
+import 'package:doctor_ui/second.dart';
 import 'package:doctor_ui/thrid.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,7 +23,10 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            home: const ThreeScreen(),
+            home: SecondScreen(
+              doctorName: 'dr Kabuto yakushi',
+              post: 'Heart Speacilist ',
+            ),
           );
         });
   }
