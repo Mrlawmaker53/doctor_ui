@@ -216,12 +216,15 @@ class _SecondScreenState extends State<SecondScreen> {
   }
 
   Widget _buildTimeRow() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        for (int i = 0; i < 6; i++)
-          _buildDate(Time[i], week[i], 60, 50, 'Time'),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          for (int i = 0; i < 6; i++)
+            _buildDate(Time[i], week[i], 60, 50, 'Time'),
+        ],
+      ),
     );
   }
 
@@ -236,12 +239,21 @@ class _SecondScreenState extends State<SecondScreen> {
       },
       child: Container(
           decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(20)),
               color: setColor(date, Type == 'Date' ? 'Date' : 'Time')),
           width: width,
           height: height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text(date), Type == 'Date' ? Text(week) : SizedBox()],
+            children: [
+              Padding(
+                padding: Type == 'Time'
+                    ? EdgeInsets.symmetric(horizontal: 10)
+                    : EdgeInsets.zero,
+                child: Text(date),
+              ),
+              Type == 'Date' ? Text(week) : SizedBox()
+            ],
           )),
     );
   }
