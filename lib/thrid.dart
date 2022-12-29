@@ -143,11 +143,11 @@ Widget _buildListRow(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
+               Text(
                 '10:20 AM',
                 style: TextStyle(fontSize: 16, color: Colors.grey),
               ),
-              SizedBox(
+               SizedBox(
                 height: 10,
               ),
               notifcationflag
